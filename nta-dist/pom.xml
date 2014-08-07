@@ -48,6 +48,11 @@
         </dependency>
         <dependency>
             <groupId>io.narayana.nta</groupId>
+            <artifactId>restapi</artifactId>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>io.narayana.nta</groupId>
             <artifactId>core</artifactId>
             <type>ejb</type>
         </dependency>
@@ -92,6 +97,11 @@
                             <groupId>io.narayana.nta</groupId>
                             <artifactId>webapp</artifactId>
                             <contextRoot>/nta</contextRoot>
+                        </webModule>
+                        <webModule>
+                            <groupId>io.narayana.nta</groupId>
+                            <artifactId>restapi</artifactId>
+                            <contextRoot>/nta/rest</contextRoot>
                         </webModule>
                     </modules>
                     <fileNameMapping>no-version</fileNameMapping>

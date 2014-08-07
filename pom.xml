@@ -111,6 +111,7 @@
                 <module>core</module>
                 <module>plugins</module>
                 <module>webapp</module>
+                <module>restapi</module>
                 <module>nta-dist</module>
                 <module>nta-remote-dist</module>
                 <module>demo</module>
@@ -163,6 +164,15 @@
                 <type>war</type>
                 <scope>compile</scope>
             </dependency>
+
+            <dependency>
+                <groupId>io.narayana.nta</groupId>
+                <artifactId>restapi</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+                <scope>compile</scope>
+            </dependency>
+
 
             <dependency>
                 <groupId>org.jboss.spec</groupId>

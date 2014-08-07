@@ -23,6 +23,7 @@
 package io.narayana.nta.persistence;
 
 import io.narayana.nta.interceptors.LoggingInterceptor;
+import io.narayana.nta.persistence.entities.Event;
 import io.narayana.nta.persistence.entities.ParticipantRecord;
 import io.narayana.nta.persistence.entities.ResourceManager;
 import io.narayana.nta.persistence.entities.Transaction;
@@ -195,6 +196,32 @@ public class DataAccessObject implements Serializable {
         return em.createNamedQuery("ResourceManager.findAll", ResourceManager.class).getResultList();
     }
 
+    public ResourceManager findResourceManagerByBranchId(String branchId)
+    {
+        try
+        {
+            return em.createNamedQuery("ResourceManager.findByBranchId", ResourceManager.class)
+                    .setParameter("branchId", branchId).getSingleResult();
+        }
+        catch(NoResultException nre)
+        {
+            return null;
+        }
+    }
+
+    /*
+    * Method for retrieving objects of type Events
+    */
+
+    public Event findEvent(Long id) {
+
+        return em.find(Event.class, id);
+    }
+
+    public Collection<Event> findAllEvents(){
+
+        return em.createNamedQuery("Event.findAll", Event.class).getResultList();
+    }
 
     /*
     @AroundInvoke
